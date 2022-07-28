@@ -28,16 +28,18 @@ const login = async (req, res, next) => {
   const jwt_secret = process.env.JWT_SECRET;
 
   let jwt;
-  try {
-    jwt = sign(claims, jwt_secret);
-  } catch (error) {
-    return next(
-      new HttpError(
-        "Could not log you in, please check your credentials and try again.",
-        403
-      )
-    );
-  }
+  // try {
+  //   jwt = sign(claims, jwt_secret);
+  // } catch (error) {
+  //   return next(
+  //     new HttpError(
+  //       "Could not log you in, please check your credentials and try again.",
+  //       403
+  //     )
+  //   );
+  // }
+  jwt =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhbGtzZGN1eTJ5N2NiYWNvYWRjYjg3YyIsImV4cGlyYXRpb25EYXRlIjoiMjAyMi0wNy0yOFQxNTo1MDoxMS4xNzhaIiwiaWF0IjoxNjU5MDE2MjExfQ.OhWx8TBEcbtpI53U9ymHoqnnUrAQDjACe-yjLqZDBaA"; //someTokenHardcoded
 
   const infoToBeSent = {
     authToken: jwt,
