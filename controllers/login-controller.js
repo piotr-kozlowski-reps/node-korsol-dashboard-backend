@@ -22,7 +22,7 @@ const login = async (req, res, next) => {
   const claims = {
     userId: userToCompare.userId,
     expirationDate: new Date(
-      new Date().getTime() + 1000 * 60 * 120 //narazie ustawione na 2h
+      new Date("2050-12-12").getTime() + 1000 * 60 * 120 //narazie ustawione na 2h
     ).toISOString(),
   };
   const jwt_secret = process.env.JWT_SECRET;
@@ -39,7 +39,7 @@ const login = async (req, res, next) => {
   //   );
   // }
   jwt =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhbGtzZGN1eTJ5N2NiYWNvYWRjYjg3YyIsImV4cGlyYXRpb25EYXRlIjoiMjAyMi0wNy0yOFQxNTo1MDoxMS4xNzhaIiwiaWF0IjoxNjU5MDE2MjExfQ.OhWx8TBEcbtpI53U9ymHoqnnUrAQDjACe-yjLqZDBaA"; //someTokenHardcoded
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhbGtzZGN1eTJ5N2NiYWNvYWRjYjg3YyIsImV4cGlyYXRpb25EYXRlIjoiMjA1MC0xMi0xMlQwMjowMDowMC4wMDBaIiwiaWF0IjoxNjU5MDgzMTM4fQ.xP9ofsTqha8bcO8v2xl1gk8DZEVe3OzxnmX_3poCjRU"; //someTokenHardcoded
 
   const infoToBeSent = {
     authToken: jwt,
@@ -67,28 +67,3 @@ const login = async (req, res, next) => {
 };
 
 exports.login = login;
-
-//   let token;
-//   try {
-//     token = jwt.sign(
-//       { login: existingUser.login, id: existingUser.id },
-//       process.env.JWT_KEY,
-//       {
-//         expiresIn: "1h",
-//       }
-//     );
-//   } catch (error) {
-//     return next(
-//       new HttpError(
-//         "Could not log you in, please check your credentials and try again.",
-//         403
-//       )
-//     );
-//   }
-
-//   res.json({
-//     userId: existingUser.id,
-//     login: existingUser.login,
-//     token: token,
-//   });
-// };

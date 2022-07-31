@@ -5,6 +5,9 @@ const cors = require("cors");
 require("dotenv").config();
 
 const loginRoutes = require("./routes/login-routes");
+const configRoutes = require("./routes/config-routes");
+const dashboardRoutes = require("./routes/dashboard-routes");
+const plantsVarietiesRoutes = require("./routes/plants-varieties-routes");
 
 ////
 const app = express();
@@ -15,6 +18,9 @@ app.use(bodyParser.json());
 ////
 //routes
 app.use("/api/login", loginRoutes);
+app.use("/api/config/", configRoutes);
+app.use("/api/dashboard/", dashboardRoutes);
+app.use("/api/plant-varieties/", plantsVarietiesRoutes);
 
 //errors
 app.use((req, res, next) => {
