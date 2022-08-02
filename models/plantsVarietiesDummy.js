@@ -27,7 +27,7 @@ const plantsVarietiesData = [
   {
     plantId: "sdfvfrfsdfv",
     name: "Kapusta B",
-    varietyCode: "KB1",
+    varietyCode: "KB221",
   },
   {
     plantId: "sdfvdesfvfsdfv",
