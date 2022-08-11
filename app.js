@@ -11,6 +11,7 @@ const plantsVarietiesRoutes = require("./routes/plants-varieties-routes");
 const fieldsRoutes = require("./routes/fields-routes");
 const ownersRoutes = require("./routes/owners-routes");
 const plantersRoutes = require("./routes/planters-routes");
+const companiesRoutes = require("./routes/companies-routes");
 
 ////
 const app = express();
@@ -27,6 +28,7 @@ app.use("/api/plant-varieties/", plantsVarietiesRoutes);
 app.use("/api/fields/", fieldsRoutes);
 app.use("/api/owners/", ownersRoutes);
 app.use("/api/planters/", plantersRoutes);
+app.use("/api/companies/", companiesRoutes);
 
 //errors
 app.use((req, res, next) => {

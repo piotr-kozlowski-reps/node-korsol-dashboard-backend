@@ -7,80 +7,79 @@ const config = {
     companyName: "Korsol",
     linksGroups: [
       {
-        title: "Monitoring",
+        title: "Słowniki",
         links: [
+          {
+            name: "firmy",
+            reactIcon: "<BiBuildingHouse />",
+            route: "companies",
+          },
+          {
+            name: "szklarnie",
+            reactIcon: "<GiGreenhouse />",
+            route: "greenhouses",
+          },
+          {
+            name: "produkty",
+            reactIcon: "<RiPlantLine />",
+            route: "products",
+          },
           {
             name: "odmiany",
             reactIcon: "<TbPlant2 />",
-            route: "plant_varieties",
-            api_route: "api/plant-varietes/[userId]",
+            route: "verieties",
           },
           {
-            name: "pola",
-            reactIcon: "<BiRectangle />",
-            route: "fields",
-            api_route: "api/fields/[userId]",
-          },
-          {
-            name: "właściciele gospodarstw",
-            reactIcon: "<BsPeople />",
-            route: "owners",
-            api_route: "api/owners/[userId]",
-          },
-          {
-            name: "sadzarki",
-            reactIcon: "<TbTractor />",
-            route: "planters",
-            api_route: "api/planters/[userId]",
+            name: "dostęp do pól",
+            reactIcon: "<SiOpenaccess />",
+            route: "field-access",
           },
         ],
       },
       {
-        title: "Aplikacje",
+        title: "............................",
         links: [
           {
-            name: "kalendarz",
+            name: "........",
             reactIcon: "<TbCalendar />",
             route: "calendar",
-            api_route: "api/calendar/[userId]",
           },
           {
-            name: "kanban",
+            name: "..............",
             reactIcon: "<TbLayoutKanban />",
             route: "kanban",
-            api_route: "api/kanban/[userId]",
           },
         ],
       },
-      {
-        title: "Wykresy",
-        links: [
-          {
-            name: "liniowy",
-            reactIcon: "<AiOutlineStock />",
-            route: "charts/line",
-            api_route: "api/charts/line/[userId]",
-          },
-          {
-            name: "obszarowy",
-            reactIcon: "<AiOutlineAreaChart />",
-            route: "charts/area",
-            api_route: "api/charts/area/[userId]",
-          },
-          {
-            name: "kołowy",
-            reactIcon: "<FiPieChart />",
-            route: "charts/pie",
-            api_route: "api/charts/pie/[userId]",
-          },
-          {
-            name: "słupkowy",
-            reactIcon: "<AiOutlineBarChart />",
-            route: "charts/stacked",
-            api_route: "api/charts/stacked/[userId]",
-          },
-        ],
-      },
+      // {
+      //   title: "Wykresy",
+      //   links: [
+      //     {
+      //       name: "liniowy",
+      //       reactIcon: "<AiOutlineStock />",
+      //       route: "charts/line",
+      //       api_route: "api/charts/line/[userId]",
+      //     },
+      //     {
+      //       name: "obszarowy",
+      //       reactIcon: "<AiOutlineAreaChart />",
+      //       route: "charts/area",
+      //       api_route: "api/charts/area/[userId]",
+      //     },
+      //     {
+      //       name: "kołowy",
+      //       reactIcon: "<FiPieChart />",
+      //       route: "charts/pie",
+      //       api_route: "api/charts/pie/[userId]",
+      //     },
+      //     {
+      //       name: "słupkowy",
+      //       reactIcon: "<AiOutlineBarChart />",
+      //       route: "charts/stacked",
+      //       api_route: "api/charts/stacked/[userId]",
+      //     },
+      //   ],
+      // },
     ],
   },
   userProfile: {
