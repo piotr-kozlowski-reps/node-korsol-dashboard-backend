@@ -1,0 +1,4 @@
+const dummyToken =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhbGtzZGN1eTJ5N2NiYWNvYWRjYjg3YyIsImV4cGlyYXRpb25EYXRlIjoiMjA1MC0xMi0xMlQwMjowMDowMC4wMDBaIiwiaWF0IjoxNjU5MDgzMTM4fQ.9gw8f3UjsRCPyF7fNiQ8r78oOivCbJH0vMeEAUc_dAk";
+
+module.exports = dummyToken;

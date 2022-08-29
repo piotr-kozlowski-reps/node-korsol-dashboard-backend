@@ -1,8 +1,8 @@
 const HttpError = require("../models/http-error");
 let plantsVarietiesData = require("../models/plantsVarietiesDummy");
+const dummyToken = require("../models/token");
 
-const token =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhbGtzZGN1eTJ5N2NiYWNvYWRjYjg3YyIsImV4cGlyYXRpb25EYXRlIjoiMjA1MC0xMi0xMlQwMjowMDowMC4wMDBaIiwiaWF0IjoxNjU5MDgzMTM4fQ.xP9ofsTqha8bcO8v2xl1gk8DZEVe3OzxnmX_3poCjRU";
+const token = dummyToken;
 
 ////logic
 function getResponse() {

@@ -1,6 +1,7 @@
 const HttpError = require("../models/http-error");
 const { compare, hash } = require("bcrypt");
 const { sign } = require("jsonwebtoken");
+const dummyToken = require("../models/token");
 
 const login = async (req, res, next) => {
   const { email, password } = req.body;
@@ -38,8 +39,7 @@ const login = async (req, res, next) => {
   //     )
   //   );
   // }
-  jwt =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhbGtzZGN1eTJ5N2NiYWNvYWRjYjg3YyIsImV4cGlyYXRpb25EYXRlIjoiMjA1MC0xMi0xMlQwMjowMDowMC4wMDBaIiwiaWF0IjoxNjU5MDgzMTM4fQ.xP9ofsTqha8bcO8v2xl1gk8DZEVe3OzxnmX_3poCjRU"; //someTokenHardcoded
+  jwt = dummyToken; //someTokenHardcoded
 
   const infoToBeSent = {
     authToken: jwt,

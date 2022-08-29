@@ -1,10 +1,11 @@
 const HttpError = require("../models/http-error");
 const config = require("../models/configDummy");
+const dummyToken = require("../models/token");
+
+const token = dummyToken;
 
 const fetchConfig = async (req, res, next) => {
   //tymczas sprawdzanie tokena
-  const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhbGtzZGN1eTJ5N2NiYWNvYWRjYjg3YyIsImV4cGlyYXRpb25EYXRlIjoiMjA1MC0xMi0xMlQwMjowMDowMC4wMDBaIiwiaWF0IjoxNjU5MDgzMTM4fQ.xP9ofsTqha8bcO8v2xl1gk8DZEVe3OzxnmX_3poCjRU";
   if (!req.headers.authorization || req.headers.authorization !== token) {
     return next(
       new HttpError(
