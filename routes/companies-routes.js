@@ -6,6 +6,6 @@ const router = express.Router();
 router.get("/", companiesController.getCompanies);
 // router.post("/", ownersController.postOwners);
 // router.put("/", ownersController.putOwners);
-// router.delete("/:ownerId", ownersController.deleteOwners);
+router.delete("/:companyId", companiesController.deleteCompany);
 
 module.exports = router;

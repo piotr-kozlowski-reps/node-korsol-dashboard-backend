@@ -77,39 +77,41 @@ const getCompanies = async (req, res, next) => {
 //   res.status(200).json(getResponse());
 // };
 
-// ////DELETE
-// const deleteFields = async (req, res, next) => {
-//   console.log("delete");
-//   const fieldId = req.params.fieldId;
+// router.delete("/:companyId", companiesController.deleteCompany);
 
-//   if (!req.headers.authorization || req.headers.authorization !== token) {
-//     return next(
-//       new HttpError(
-//         "Niestety, nie jesteś zalogowany lub Twój token wygasł.",
-//         401
-//       )
-//     );
-//   }
+////DELETE
+const deleteCompany = async (req, res, next) => {
+  console.log("delete");
+  const companyId = req.params.companyId;
 
-//   if (!fieldId)
-//     return next(
-//       new HttpError("Nie mogę znaleźć id rośliny do skasowania .", 401)
-//     );
+  if (!req.headers.authorization || req.headers.authorization !== token) {
+    return next(
+      new HttpError(
+        "Niestety, nie jesteś zalogowany lub Twój token wygasł.",
+        401
+      )
+    );
+  }
 
-//   const index = fieldsData.findIndex((field) => field.fieldId === fieldId);
+  if (!companyId)
+    return next(
+      new HttpError("Nie mogę znaleźć id firmy do skasowania .", 401)
+    );
 
-//   console.log({ fieldId });
-//   console.log({ index });
+  const index = companiesData.findIndex((company) => company.id === companyId);
 
-//   if (index === -1)
-//     return next(new HttpError("Nie mogę znaleźć takiej rośliny.", 401));
+  console.log({ companyId: companyId });
+  console.log({ index });
 
-//   fieldsData = fieldsData.filter((field) => {
-//     return field.fieldId !== fieldId;
-//   });
+  if (index === -1)
+    return next(new HttpError("Nie mogę znaleźć takiej firmy.", 401));
 
-//   res.status(200).json(getResponse());
-// };
+  companiesData = companiesData.filter((company) => {
+    return company.id !== companyId;
+  });
+
+  res.status(200).json(getResponse());
+};
 
 // //utils
 // function checkIsReqDataCorrect(reqBody) {
@@ -128,4 +130,4 @@ const getCompanies = async (req, res, next) => {
 exports.getCompanies = getCompanies;
 // exports.postFields = postFields;
 // exports.putFields = putFields;
-// exports.deleteFields = deleteFields;
+exports.deleteCompany = deleteCompany;
