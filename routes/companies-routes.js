@@ -4,7 +4,7 @@ const companiesController = require("../controllers/companies-controller");
 const router = express.Router();
 
 router.get("/", companiesController.getCompanies);
-// router.post("/", ownersController.postOwners);
+router.post("/", companiesController.postCompanies);
 // router.put("/", ownersController.putOwners);
 router.delete("/:companyId", companiesController.deleteCompany);
 

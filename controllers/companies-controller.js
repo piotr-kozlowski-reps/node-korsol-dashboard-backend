@@ -28,28 +28,30 @@ const getCompanies = async (req, res, next) => {
   // }, 4000);
 };
 
-// ////POST
-// const postFields = async (req, res, next) => {
-//   const reqBody = req.body;
+// router.post("/", companiesController.postCompanies);
 
-//   if (!req.headers.authorization || req.headers.authorization !== token) {
-//     return next(
-//       new HttpError(
-//         "Niestety, nie jesteś zalogowany lub Twój token wygasł.",
-//         401
-//       )
-//     );
-//   }
+////POST
+const postCompanies = async (req, res, next) => {
+  const reqBody = req.body;
 
-//   const isReqDataCorrect = checkIsReqDataCorrect(reqBody);
+  if (!req.headers.authorization || req.headers.authorization !== token) {
+    return next(
+      new HttpError(
+        "Niestety, nie jesteś zalogowany lub Twój token wygasł.",
+        401
+      )
+    );
+  }
 
-//   if (!reqBody || !isReqDataCorrect)
-//     return next(new HttpError("Złe dane. Spróbuj ponownie.", 403));
+  const isReqDataCorrect = checkIsReqDataCorrect(reqBody);
 
-//   fieldsData.splice(0, 0, reqBody);
+  if (!reqBody || !isReqDataCorrect)
+    return next(new HttpError("Złe dane. Spróbuj ponownie.", 403));
 
-//   res.status(200).json(req.body);
-// };
+  companiesData.splice(0, 0, reqBody);
+
+  res.status(200).json(req.body);
+};
 
 // ////PUT
 // const putFields = async (req, res, next) => {
@@ -113,21 +115,12 @@ const deleteCompany = async (req, res, next) => {
   res.status(200).json(getResponse());
 };
 
-// //utils
-// function checkIsReqDataCorrect(reqBody) {
-//   return (
-//     reqBody &&
-//     reqBody.fieldId &&
-//     reqBody.name &&
-//     reqBody.fieldNumber &&
-//     reqBody.area &&
-//     reqBody.details &&
-//     reqBody.planter &&
-//     reqBody.owner
-//   );
-// }
+//utils
+function checkIsReqDataCorrect(reqBody) {
+  return reqBody && reqBody.id && reqBody.name;
+}
 
 exports.getCompanies = getCompanies;
-// exports.postFields = postFields;
+exports.postCompanies = postCompanies;
 // exports.putFields = putFields;
 exports.deleteCompany = deleteCompany;
