@@ -53,33 +53,38 @@ const postCompanies = async (req, res, next) => {
   res.status(200).json(req.body);
 };
 
-// ////PUT
-// const putFields = async (req, res, next) => {
-//   const reqBody = req.body;
+////PUT
+const putCompany = async (req, res, next) => {
+  const reqBody = req.body;
 
-//   if (!req.headers.authorization || req.headers.authorization !== token) {
-//     return next(
-//       new HttpError(
-//         "Niestety, nie jesteś zalogowany lub Twój token wygasł.",
-//         401
-//       )
-//     );
-//   }
+  if (!req.headers.authorization || req.headers.authorization !== token) {
+    return next(
+      new HttpError(
+        "Niestety, nie jesteś zalogowany lub Twój token wygasł.",
+        401
+      )
+    );
+  }
 
-//   const isReqDataCorrect = checkIsReqDataCorrect(reqBody);
+  const isReqDataCorrect = checkIsReqDataCorrect(reqBody);
 
-//   if (!reqBody || !isReqDataCorrect)
-//     return next(new HttpError("Złe dane. Spróbuj ponownie.", 403));
+  if (!reqBody || !isReqDataCorrect)
+    return next(new HttpError("Złe dane. Spróbuj ponownie.", 403));
 
-//   const index = fieldsData.findIndex(
-//     (field) => field.fieldId === reqBody.fieldId
-//   );
-//   fieldsData.splice(index, 1, reqBody);
+  const index = companiesData.findIndex((company) => company.id === reqBody.id);
 
-//   res.status(200).json(getResponse());
-// };
+  if (index === -1)
+    return next(
+      new HttpError(
+        "Złe dane. Nie ma takiej firmy w bazie. Spróbuj ponownie.",
+        403
+      )
+    );
 
-// router.delete("/:companyId", companiesController.deleteCompany);
+  companiesData.splice(index, 1, reqBody);
+
+  res.status(200).json(getResponse());
+};
 
 ////DELETE
 const deleteCompany = async (req, res, next) => {
@@ -122,5 +127,5 @@ function checkIsReqDataCorrect(reqBody) {
 
 exports.getCompanies = getCompanies;
 exports.postCompanies = postCompanies;
-// exports.putFields = putFields;
+exports.putCompany = putCompany;
 exports.deleteCompany = deleteCompany;

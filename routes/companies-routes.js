@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get("/", companiesController.getCompanies);
 router.post("/", companiesController.postCompanies);
-// router.put("/", ownersController.putOwners);
+router.put("/", companiesController.putCompany);
 router.delete("/:companyId", companiesController.deleteCompany);
 
 module.exports = router;
