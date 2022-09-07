@@ -7,11 +7,12 @@ require("dotenv").config();
 const loginRoutes = require("./routes/login-routes");
 const configRoutes = require("./routes/config-routes");
 const dashboardRoutes = require("./routes/dashboard-routes");
-const plantsVarietiesRoutes = require("./routes/plants-varieties-routes");
-const fieldsRoutes = require("./routes/fields-routes");
-const ownersRoutes = require("./routes/owners-routes");
-const plantersRoutes = require("./routes/planters-routes");
+// const plantsVarietiesRoutes = require("./routes/plants-varieties-routes");
+// const fieldsRoutes = require("./routes/fields-routes");
+// const ownersRoutes = require("./routes/owners-routes");
+// const plantersRoutes = require("./routes/planters-routes");
 const companiesRoutes = require("./routes/companies-routes");
+const greenhousesRoutes = require("./routes/greenhouses-routes");
 
 ////
 const app = express();
@@ -24,11 +25,12 @@ app.use(bodyParser.json());
 app.use("/api/login", loginRoutes);
 app.use("/api/config/", configRoutes);
 app.use("/api/dashboard/", dashboardRoutes);
-app.use("/api/plant-varieties/", plantsVarietiesRoutes);
-app.use("/api/fields/", fieldsRoutes);
-app.use("/api/owners/", ownersRoutes);
-app.use("/api/planters/", plantersRoutes);
+// app.use("/api/plant-varieties/", plantsVarietiesRoutes);
+// app.use("/api/fields/", fieldsRoutes);
+// app.use("/api/owners/", ownersRoutes);
+// app.use("/api/planters/", plantersRoutes);
 app.use("/api/companies/", companiesRoutes);
+app.use("/api/greenhouses/", greenhousesRoutes);
 
 //errors
 app.use((req, res, next) => {
