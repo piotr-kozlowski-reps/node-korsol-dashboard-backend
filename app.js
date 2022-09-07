@@ -14,6 +14,7 @@ const dashboardRoutes = require("./routes/dashboard-routes");
 const companiesRoutes = require("./routes/companies-routes");
 const greenhousesRoutes = require("./routes/greenhouses-routes");
 const productsRoutes = require("./routes/products-routes");
+const varietiesRoutes = require("./routes/varieties-routes");
 
 ////
 const app = express();
@@ -33,6 +34,7 @@ app.use("/api/dashboard/", dashboardRoutes);
 app.use("/api/companies/", companiesRoutes);
 app.use("/api/greenhouses/", greenhousesRoutes);
 app.use("/api/products/", productsRoutes);
+app.use("/api/varieties/", varietiesRoutes);
 
 //errors
 app.use((req, res, next) => {

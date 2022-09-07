@@ -27,7 +27,7 @@ const config = {
           {
             name: "odmiany",
             reactIcon: "<TbPlant2 />",
-            route: "verieties",
+            route: "varieties",
           },
           {
             name: "dostęp do pól",
