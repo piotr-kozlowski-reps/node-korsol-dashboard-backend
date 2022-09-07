@@ -13,6 +13,7 @@ const dashboardRoutes = require("./routes/dashboard-routes");
 // const plantersRoutes = require("./routes/planters-routes");
 const companiesRoutes = require("./routes/companies-routes");
 const greenhousesRoutes = require("./routes/greenhouses-routes");
+const productsRoutes = require("./routes/products-routes");
 
 ////
 const app = express();
@@ -31,6 +32,7 @@ app.use("/api/dashboard/", dashboardRoutes);
 // app.use("/api/planters/", plantersRoutes);
 app.use("/api/companies/", companiesRoutes);
 app.use("/api/greenhouses/", greenhousesRoutes);
+app.use("/api/products/", productsRoutes);
 
 //errors
 app.use((req, res, next) => {
