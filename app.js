@@ -22,8 +22,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-////
-//routes
+////routes
 app.use("/api/login", loginRoutes);
 app.use("/api/config/", configRoutes);
 app.use("/api/dashboard/", dashboardRoutes);
